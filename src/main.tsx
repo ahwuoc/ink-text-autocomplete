@@ -10,12 +10,14 @@ export type AutoCompleteProps = {
   placeholder?: string;
   multiWord?: boolean;
   submitKey?: string;
+  onComplete?: () => void;
   suggestionProps?: (suggestion: string, isHighlighted: boolean) => TextProps;
 };
 
 const AutoComplete = ({
   suggestions,
   onSelect,
+  onComplete,
   selectKey = " ",
   activationKey = "tab",
   placeholder = "Type something...",
@@ -48,9 +50,9 @@ const AutoComplete = ({
   }, [query, isSuggestionVisible, suggestionList, multiWord]);
 
   const applySuggestion = (s: string) => {
-    const newQuery = multiWord
-      ? [...query.trim().split(/\s+/).slice(0, -1), s].join(" ") + " "
-      : s;
+    const parts = multiWord ? query.match(/^(.*\s)?(?:\S+)?$/) : null;
+    const newQuery = multiWord ? `${parts?.[1] || ""}${s} ` : s;
+
     setQuery(newQuery);
     onSelect(s);
     setFilteredSuggestions([]);
@@ -61,6 +63,7 @@ const AutoComplete = ({
   useInput((input, key) => {
     if (key.return || (submitKey && input === submitKey)) {
       onSelect(query);
+      onComplete?.();
       setIsSuggestionVisible(false);
       return;
     }

@@ -1,3 +1,5 @@
+![ink-text-autocomplete demo](https://res.cloudinary.com/de2rfv7q2/image/upload/v1748621734/n7jnnldbnvbwch6u1u9p.gif)
+
 # ink-text-autocomplete
 
 An Ink component for adding autocomplete functionality to text inputs in command-line interfaces. Built with React and Ink.
