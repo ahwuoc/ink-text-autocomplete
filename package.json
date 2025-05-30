@@ -23,8 +23,5 @@
     "react": "^19.1.0",
     "ink": "^6.0.0",
     "ink-text-input": "^6.0.0"
-  },
-  "dependencies": {
-    "ink-text-autocomplete": "https://github.com/ahwuoc/ink-text-autocomplete.git"
   }
 }
