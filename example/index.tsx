@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { render, Text } from "ink";
-import { AutoComplete } from "./src/index";
+import { AutoComplete } from "../src";
 
 const Example = () => {
   const [selected, setSelected] = useState<string | null>(null);

@@ -11,7 +11,7 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "dev": "bun --hot run src/index.tsx",
+    "dev": "bun --hot run example/index.tsx",
     "build": "bun build src/index.tsx --outdir ./dist --splitting --format esm && tsc --emitDeclarationOnly --outDir dist"
   },
   "devDependencies": {
