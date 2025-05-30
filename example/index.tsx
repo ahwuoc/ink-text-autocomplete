@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { render, Text } from "ink";
+import { render, type Text } from "ink";
 import { AutoComplete } from "../src";
 
 const Example = () => {
