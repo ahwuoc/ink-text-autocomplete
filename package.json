@@ -1,0 +1,30 @@
+{
+  "name": "ink-text-autocomplete",
+  "version": "0.1.3",
+  "description": "An Ink component built with Bun and TypeScript",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "dev": "bun --hot run src/index.tsx",
+    "build": "bun build src/index.tsx --outdir ./dist --splitting --format esm && tsc --emitDeclarationOnly --outDir dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.1.6",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "ink": "^6.0.0",
+    "ink-text-input": "^6.0.0"
+  },
+  "dependencies": {
+    "ink-text-autocomplete": "https://github.com/ahwuoc/ink-text-autocomplete.git"
+  }
+}
